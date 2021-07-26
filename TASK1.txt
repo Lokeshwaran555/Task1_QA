@@ -1,0 +1,13 @@
+const cypress = require("cypress");
+const { describe } = require("mocha");
+
+describe("This is nav",function()
+{
+    it("Navigation",function()
+    {
+        cypress.visit('https://www.google.co.in') // Opening the Url
+        cy.xpath("//*[@name='q']").should("be.enabled").type("dev.devmobo.com")
+        .type('{enter}')
+        cy.url.should("contain","dev.devmobo.com")  // url
+    })
+})
